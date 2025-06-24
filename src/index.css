@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+:root{
+  font-family: "Poppins";
+}
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Adjust scrollbar width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Light background */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.6); /* Cyan scrollbar color */
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Slight outline */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.9); /* Brighter cyan on hover */
+}
+
+@keyframes matrix {
+  0% { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+.animate-matrix::before {
+  content: '0101010010110 1010100101100 1101100010101';
+  display: block;
+  font-family: monospace;
+  font-size: 16px;
+  white-space: nowrap;
+  color: rgba(0, 255, 0, 0.8);
+  position: absolute;
+  animation: matrix 4s linear infinite;
+}
