@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"; 
 import { motion } from "framer-motion"; 
-import profileImg from "../assets/profile.png";
+import profileImg from "../assets/photo.jpg";
 
   const randomCodeChar = () => {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
