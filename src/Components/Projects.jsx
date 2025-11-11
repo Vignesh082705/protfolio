@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
-import photo from "../assets/photo.jpg";
+import photo1 from "../assets/Food_redistribution.jpg";
+import photo2 from "../assets/OnlineShopping.jpg";
+import photo3 from "../assets/MemoryGame.jpg";
 
 function Projects() {
   const projects = [
@@ -9,26 +11,26 @@ function Projects() {
       title: "Food Redistribution",
       description:
         "A platform that connects food donors with recipients, reducing food waste effectively. This project ensures food security by minimizing waste and distributing surplus food to those in need, leveraging technology for efficient logistics and tracking.",
-      image: photo,
-      link: "#",
+      image: photo1,
+      link: "https://food-redistribution-da7w.vercel.app/",
       gradient: "bg-gradient-to-br from-purple-500 to-indigo-500",
     },
     {
-      title: "Portfolio Website",
+      title: "Online Shopping Web Application",
       description:
-        "A personal portfolio showcasing my skills, achievements, and completed projects. Designed with modern UI/UX principles, it features dynamic animations, responsiveness, and an interactive experience for visitors.",
-      image: photo,
-      link: "#",
-      gradient: "bg-gradient-to-br from-cyan-500 to-blue-500",
+        "A complete e-commerce platform built using HTML, CSS, JavaScript, and JSON. Features include product listing, client-side cart management, category filtering, user login system, and persistent cart/session storage using localStorage. Designed with responsive UI and smooth user interactions.",
+      image: photo2,
+      link: "https://github.com/Vignesh082705/Onlline-Shopping",
+      gradient: "bg-gradient-to-br from-green-500 to-emerald-600",
     },
     {
-      title: "Prepwizdom",
+      title: "Memory Game",
       description:
-        "An educational platform for learning programming through interactive lessons, quizzes, and coding challenges. Designed for students and professionals aiming to enhance their coding skills efficiently.",
-      image: photo,
-      link: "#",
-      gradient: "bg-gradient-to-br from-pink-500 to-red-500",
-    },
+        "An interactive memory card game developed using HTML, CSS, and JavaScript. Includes engaging flip animations, scoring system, difficulty modes, and optimized DOM handling for smooth gameplay on both desktop and mobile devices.",
+      image: photo3,
+      link: "https://github.com/Vignesh082705/Memory-Game",
+      gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    },    
   ];
 
   const [current, setCurrent] = useState(0);
@@ -63,12 +65,11 @@ function Projects() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <div className="absolute inset-0 opacity-50 bg-gradient-to-br from-white/10 to-transparent blur-2xl rounded-3xl" />
-
+          <div className="absolute inset-0 opacity-50 bg-gradient-to-br from-white/10 to-transparent blur-2xl rounded-3xl pointer-events-none" />
           <img
             src={projects[current].image}
             alt={projects[current].title}
-            className="w-full h-60 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+            className="w-full h-60 object-fit rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
           />
           <h3 className="text-2xl font-semibold mt-6 text-white drop-shadow-md tracking-wide">
             {projects[current].title}
@@ -76,14 +77,12 @@ function Projects() {
           <p className="text-gray-200 mt-3 text-lg leading-relaxed drop-shadow-md">
             {projects[current].description}
           </p>
-          <a
-            href={projects[current].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 px-7 py-3 bg-cyan-400 text-gray-900 font-bold text-lg rounded-lg hover:bg-cyan-300 transition-all shadow-md hover:shadow-xl"
+          <button
+            onClick={() => window.open(projects[current].link, "_blank")}
+            className="inline-block mt-6 px-7 z-10 py-3 bg-cyan-400 text-gray-900 font-bold text-lg rounded-lg hover:bg-cyan-300 transition-all shadow-md hover:shadow-xl"
           >
             View Project
-          </a>
+          </button>
         </motion.div>
         {current >0&&(
         <button
